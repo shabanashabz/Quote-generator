@@ -1,5 +1,5 @@
-body,
-html {
+body {
+  overflow: auto;
   height: 100%;
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
@@ -7,6 +7,7 @@ html {
 .app {
   height: 100%;
 }
+
 .quote-container {
   display: flex;
   flex-direction: column;
@@ -15,29 +16,32 @@ html {
   height: 100vh;
   background: linear-gradient(135deg, #caeba1, #b6fbff);
   color: black;
+  padding: 10px;
 }
+
 .quote-box {
-  height: auto;
-  width: 40%;
+  width: 90%;
+  max-width: 600px;
   background: white;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
+
 .quote-text {
-  font-size: 1.5 rem;
+  font-size: 1.2rem;
   font-style: oblique;
   font-weight: bolder;
 }
+
 .quote-author {
-  margin-left: 50%;
   font-size: 1.25rem;
   color: orange;
+  text-align: right;
 }
+
 .btn-primary {
-  /* margin-left: 700px; */
-  /* position: fixed; */
   background-color: green;
   border: none;
   padding: 10px 20px;
@@ -45,24 +49,27 @@ html {
   cursor: pointer;
   transition: background-color 0.3s;
 }
+
 .btn-primary:hover {
   background-color: rgb(26, 139, 81);
 }
 
 .favorites-modal {
-  width: 60%;
+  width: 90%;
+  max-width: 600px;
   max-height: 40vh;
   overflow-y: auto;
   background-color: #f8f9fa;
   border-radius: 8px;
   z-index: 1000;
+  margin-top: 20px;
 }
-body {
-  overflow: hidden;
-}
+
 .action-buttons {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  margin-top: 10px;
 }
 
 .copy-btn i {
@@ -72,4 +79,29 @@ body {
 .copy-success {
   color: green;
   font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .quote-box {
+    width: 100%; /* Make the quote box full-width on small screens */
+    padding: 15px; /* Adjust padding for mobile */
+  }
+
+  .quote-text {
+    font-size: 1rem; /* Smaller font for smaller screens */
+  }
+
+  .quote-author {
+    font-size: 1rem; /* Smaller font for smaller screens */
+  }
+
+  .btn-primary {
+    padding: 8px 16px; /* Smaller button for mobile */
+    font-size: 0.9rem;
+  }
+
+  .favorites-modal {
+    width: 100%; /* Full-width modal on mobile */
+    max-height: 30vh; /* Smaller height for mobile */
+  }
 }
